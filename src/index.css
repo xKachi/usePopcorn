@@ -247,8 +247,7 @@ body {
 .details header {
   display: flex;
 }
-
-.details section {
+.box .details section {
   padding: 4rem;
   display: flex;
   flex-direction: column;
