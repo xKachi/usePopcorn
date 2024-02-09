@@ -67,7 +67,7 @@ export default function App() {
           `http://www.omdbapi.com/?apikey=${KEY}&s=${query}`
         );
 
-        if (res.ok)
+        if (!res.ok)
           throw new Error("Something went wrong with fetching movies");
 
         const data = await res.json();
@@ -96,8 +96,11 @@ export default function App() {
       <Main>
         <Box>
           {/* {isLoading ? <Loader /> : <MovieList movies={movies} />} */}
+          {/* It is loading */}
           {isLoading && <Loader />}
-          {isLoading && !error && <MovieList movies={movies} />}
+          {/* It is not loading, an there is no error*/}
+          {!isLoading && !error && <MovieList movies={movies} />}
+          {/*It is not loading, because there is an error*/}
           {error && <ErrorMessage message={error} />}
         </Box>
         <Box>
