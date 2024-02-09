@@ -106,7 +106,3 @@ function Star({ onRate, onHoverIn, onHoverOut, full, color, size }) {
     </span>
   );
 }
-
-function really() {
-  return "facts";
-}
